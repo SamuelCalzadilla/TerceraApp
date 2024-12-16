@@ -1,13 +1,27 @@
-<div>
-  <ng-container *ngIf="showSharedComponents">
-    <!-- Componentes compartidos -->
-    <app-scroll-to-top></app-scroll-to-top>
-    <app-scroll-to-bottom></app-scroll-to-bottom>
-    <app-side-menu></app-side-menu>
-    <app-previous-page></app-previous-page>
-    <app-next-page></app-next-page>
-  </ng-container>
+<div class="app-container">
 
-  <!-- Contenido principal -->
-  <router-outlet></router-outlet>
+
+  <!-- Hoja principal -->
+  <div class="content-wrapper">
+    <ng-container *ngIf="showSharedComponents">
+        <!-- Fondo -->
+  <div class="background"></div>
+      <!-- Menú lateral -->
+      <div class="side-menu">
+        <ng-container *ngIf="showSharedComponents">
+          <app-side-menu></app-side-menu>
+        </ng-container>
+      </div>
+      <!-- Componentes compartidos (excepto el menú lateral) -->
+      <app-scroll-to-top></app-scroll-to-top>
+      <app-scroll-to-bottom></app-scroll-to-bottom>
+      <app-previous-page></app-previous-page>
+      <app-next-page></app-next-page>
+    </ng-container>
+
+    <div class="page-content">
+      <!-- Contenido principal -->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>

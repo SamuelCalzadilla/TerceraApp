@@ -1,0 +1,45 @@
+/* Fondo azul claro */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #e3f2fd; /* Azul claro */
+    z-index: -1;
+  }
+  
+  /* Menú lateral */
+  .side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px; /* Ancho del menú lateral */
+    height: 100%;
+    background-color: #6d8591; /* Gris oscuro */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3); /* Sombra para separar el menú del contenido */
+    z-index: 1;
+  }
+  
+  /* Contenedor principal ajustado */
+  .content-wrapper {
+    margin: 20px auto;
+    margin-left: 270px; /* Desplazamiento para acomodar el menú lateral */
+    max-width: calc(100% - 270px); /* Ajustar el ancho al tamaño del menú */
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+  }
+  
+  /* Contenido específico de cada página */
+  .page-content {
+    padding: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    color: #333;
+  }  
