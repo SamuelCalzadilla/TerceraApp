@@ -1,5 +1,4 @@
 <div class="app-container">
-
   <ng-container *ngIf="showSharedComponents">
     <!-- Hoja principal -->
     <div class="content-wrapper">
@@ -10,6 +9,9 @@
       <div class="side-menu">
         <app-side-menu></app-side-menu>
       </div>
+
+      <!-- Contenido principal -->
+      <router-outlet></router-outlet>
 
       <!-- Componentes compartidos (excepto el menú lateral) -->
       <app-scroll-to-top></app-scroll-to-top>
