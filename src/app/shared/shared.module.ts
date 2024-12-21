@@ -8,6 +8,7 @@ import { ScrollToBottomComponent } from './scroll-to-bottom/scroll-to-bottom.com
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { PreviousPageComponent } from './previous-page/previous-page.component';
 import { NextPageComponent } from './next-page/next-page.component';
+import { HomeButtonComponent } from './home-button/home-button.component';
 
 
 
@@ -17,7 +18,8 @@ import { NextPageComponent } from './next-page/next-page.component';
     ScrollToBottomComponent,
     SideMenuComponent,
     PreviousPageComponent,
-    NextPageComponent
+    NextPageComponent,
+    HomeButtonComponent
   ],
   imports: [
     CommonModule,  // Para usar las directivas comunes como `ngIf` y `ngFor`.
@@ -28,7 +30,8 @@ import { NextPageComponent } from './next-page/next-page.component';
     ScrollToBottomComponent,
     SideMenuComponent,
     PreviousPageComponent,
-    NextPageComponent
+    NextPageComponent,
+    HomeButtonComponent
   ]
 })
 export class SharedModule { }

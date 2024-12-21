@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { NavigationService } from '../navigation.service';
 
 @Component({
   selector: 'app-next-page',
@@ -7,6 +9,25 @@ import { Component } from '@angular/core';
   templateUrl: './next-page.component.html',
   styleUrl: './next-page.component.css'
 })
-export class NextPageComponent {
 
+export class NextPageComponent {
+  nextPage: string | null = null;
+
+  constructor(private router: Router, private navService: NavigationService) {
+    this.router.events.subscribe(() => {
+      this.updateNextPage();
+    });
+    this.updateNextPage();
+  }
+
+  private updateNextPage(): void {
+    const currentUrl = this.router.url;
+    this.nextPage = this.navService.getNextPage(currentUrl);
+  }
+
+  goToNextPage(): void {
+    if (this.nextPage) {
+      this.router.navigateByUrl(this.nextPage);
+    }
+  }
 }

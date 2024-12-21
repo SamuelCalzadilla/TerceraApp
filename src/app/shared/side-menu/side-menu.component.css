@@ -32,13 +32,13 @@
 /* Ejemplo de estilo para el enlace activo */
 .active-link {
     color: #007bff; /* Cambiar color del enlace */
-    font-weight: bold; /* Resaltar con negrita */
+    /*font-weight: bold;*/ /* Resaltar con negrita */
     text-decoration: underline; /* Subrayar */
 }
 
 /* Opcional: Estilo para el elemento padre del enlace activo */
-li > a.active-link {
+/*li > a.active-link {*/
     /*background-color: #f0f8ff; /* Fondo del enlace activo */
-    border-radius: 4px;
-    padding: 5px;
-}
+    /*border-radius: 4px;*/
+    /*padding: 5px;*/
+/*}*/
