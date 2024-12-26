@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: false,
   
   templateUrl: './pagina-tutorial-2.component.html',
-  styleUrl: './pagina-tutorial-2.component.css'
+  styleUrls: ['./pagina-tutorial-2.component.css', '../../app.component.css']
 })
 export class PaginaTutorial2Component {
 

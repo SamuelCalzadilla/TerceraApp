@@ -1,28 +1,11 @@
-/* Fondo azul claro */
 .background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #e3f2fd; /* Azul claro */
+    background-image: linear-gradient(337deg, #c3c2e8, #d7d6f0, #ebeaf7, #ffffff); /* Azul claro */
     z-index: -1;
-  }
-  
-  /* Menú lateral */
-  .side-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 250px; /* Ancho del menú lateral */
-    height: 100%;
-    background-color: #6d8591; /* Gris oscuro */
-    color: white;
-    display: flex;
-    flex-direction: column;
-    padding: 10px 0;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3); /* Sombra para separar el menú del contenido */
-    z-index: 1;
   }
   
   /* Contenedor principal ajustado */
@@ -37,10 +20,83 @@
     margin-right: 70px;
   }
   
-  /* Contenido específico de cada página */
-  .page-content {
-    padding: 20px;
+  /* Contenido específico de home */
+  .home-content {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 16px;
     color: #333;
-  }  
+  } 
+
+  .tutorial-page h1 {
+    color: red; /* Aplica el color rojo a los h1 de los componentes */
+  }
+
+
+
+
+
+
+
+
+  .tutorial-page h1, h2, h3 {
+    color: #2c3e50;
+}
+
+.tutorial-page a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+.tutorial-page a:hover {
+    text-decoration: underline;
+}
+
+.tutorial-page nav {
+    margin-top: 20px;
+}
+
+.tutorial-page pre {
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.tutorial-page ul, ol {
+    margin-left: 20px;
+}
+
+.tutorial-page small {
+    color: #e74c3c;
+}
+
+.tutorial-page button {
+    padding: 10px 15px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.tutorial-page button:hover {
+    background-color: #1f6391;
+}
+
+.tutorial-page input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 10px 0;
+    box-sizing: border-box;
+}
+
+.tutorial-page label {
+    font-weight: bold;
+}
+
+.tutorial-page .destacado {
+    background-color: #f1c40f;
+    padding: 10px;
+    border-radius: 5px;
+}
+  

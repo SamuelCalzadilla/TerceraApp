@@ -1,34 +1,87 @@
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
-<p>Contenido de la ejemplos 1</p>
+<h1>Estructura de un Proyecto Angular</h1>
+    
+<p>Entender la estructura de un proyecto Angular es fundamental para desarrollar aplicaciones de manera eficiente y mantener un código limpio y organizado. A continuación, se detalla cada parte de la estructura generada por Angular CLI.</p>
+
+<h2>Directorios Principales</h2>
+
+<h3>1. e2e/</h3>
+<p>Este directorio contiene pruebas end-to-end que verifican el funcionamiento completo de la aplicación en un entorno realista. Utiliza herramientas como Protractor para simular interacciones de usuario.</p>
+
+<h3>2. node_modules/</h3>
+<p>Contiene todas las dependencias del proyecto instaladas mediante npm. Este directorio es gestionado automáticamente y no debe ser modificado manualmente.</p>
+
+<h3>3. src/</h3>
+<p>El corazón de tu aplicación Angular reside en el directorio <code>src/</code>. Aquí se encuentran todos los componentes, servicios, módulos y otros archivos fuente.</p>
+
+<h4>Subdirectorios dentro de <code>src/</code></h4>
+<ul>
+    <li><strong>app/</strong>: Contiene los componentes principales de la aplicación.</li>
+    <li><strong>assets/</strong>: Almacena recursos estáticos como imágenes, fuentes y otros archivos multimedia.</li>
+    <li><strong>environments/</strong>: Archivos de configuración para diferentes entornos (desarrollo, producción).</li>
+</ul>
+
+<h3>4. angular.json</h3>
+<p>Archivo de configuración principal de Angular CLI. Define cómo se construye, sirve y prueba la aplicación, así como las rutas de los archivos.</p>
+
+<h3>5. package.json</h3>
+<p>Este archivo contiene información sobre el proyecto, scripts de npm y las dependencias necesarias para el funcionamiento de la aplicación.</p>
+
+<h3>6. tsconfig.json</h3>
+<p>Archivo de configuración para TypeScript. Define cómo se compilan los archivos TypeScript a JavaScript.</p>
+
+<h2>Archivos Clave dentro de <code>src/</code></h2>
+
+<h3>1. main.ts</h3>
+<p>Punto de entrada principal de la aplicación. Aquí es donde Angular inicia la aplicación y carga el módulo raíz.</p>
+
+<h3>2. index.html</h3>
+<p>Documento HTML principal que sirve como contenedor para la aplicación Angular. Aquí es donde Angular inyecta los componentes.</p>
+
+<h3>3. app.module.ts</h3>
+<p>Módulo raíz de la aplicación. Declara los componentes, importa otros módulos necesarios y define los proveedores de servicios.</p>
+
+<h3>4. app.component.ts</h3>
+<p>Componente raíz de la aplicación. Contiene la lógica y la plantilla que se muestra en <code>index.html</code>.</p>
+
+<h3>5. app.component.html</h3>
+<p>Plantilla HTML del componente raíz. Define la estructura y el contenido que se renderiza en el navegador.</p>
+
+<h3>6. app.component.css</h3>
+<p>Archivo de estilos CSS para el componente raíz. Aquí puedes definir estilos específicos para este componente.</p>
+
+<h3>7. environments/</h3>
+<p>Contiene archivos de configuración para diferentes entornos. Por ejemplo, <code>environment.ts</code> para desarrollo y <code>environment.prod.ts</code> para producción.</p>
+
+<h2>Descripción de Componentes</h2>
+<p>Angular utiliza una arquitectura basada en componentes, lo que facilita la creación de interfaces de usuario modulares y reutilizables.</p>
+
+<h3>Componentes</h3>
+<p>Cada componente consta de tres partes principales:</p>
+<ul>
+    <li><strong>TypeScript (.ts):</strong> Define la lógica y los datos del componente.</li>
+    <li><strong>HTML (.html):</strong> Define la plantilla que se renderiza en el navegador.</li>
+    <li><strong>CSS (.css):</strong> Define los estilos específicos para el componente.</li>
+</ul>
+
+<h3>Módulos</h3>
+<p>Un módulo en Angular es una forma de organizar y agrupar componentes, directivas, servicios y otros elementos relacionados. El módulo raíz se define en <code>app.module.ts</code>.</p>
+
+<h3>Servicios</h3>
+<p>Los servicios proporcionan lógica de negocio que puede ser compartida entre múltiples componentes. Se inyectan en los componentes mediante el sistema de inyección de dependencias de Angular.</p>
+
+<h2>Práctica Recomendada</h2>
+<p>Mantén una estructura organizada en tu proyecto creando subdirectorios dentro de <code>app/</code> para diferentes funcionalidades o características. Por ejemplo:</p>
+
+<pre>
+src/
+└── app/
+├── components/
+│   ├── header/
+│   └── footer/
+├── services/
+├── models/
+└── pages/
+</pre>
+
+<h2>Próximos Pasos</h2>
+<p>Con una comprensión clara de la estructura del proyecto, estamos listos para crear nuestro primer componente en la siguiente página.</p>

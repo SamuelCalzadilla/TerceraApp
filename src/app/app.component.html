@@ -1,4 +1,5 @@
 <div class="app-container">
+  <!-- Contenido de cada pagina -->
   <ng-container *ngIf="showSharedComponents">
     <!-- Hoja principal -->
     <div class="content-wrapper">
@@ -6,10 +7,8 @@
       <div class="background"></div>
 
       <!-- Menú lateral -->
-      <div class="side-menu">
-        <app-side-menu></app-side-menu>
-      </div>
-
+      <app-side-menu></app-side-menu>
+      
       <!-- Contenido principal -->
       <router-outlet></router-outlet>
 
@@ -22,8 +21,9 @@
     </div>
   </ng-container>
 
+  <!-- Contenido de home -->
   <ng-container *ngIf="!showSharedComponents">
-    <div class="page-content">
+    <div class="home-content">
       <!-- Contenido principal -->
       <router-outlet></router-outlet>
     </div>
