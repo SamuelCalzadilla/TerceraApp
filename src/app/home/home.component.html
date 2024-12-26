@@ -13,24 +13,21 @@
 
   <ul>
     <li (mouseenter)="showDescription(1)" (mouseleave)="hideDescription()">
-      <a routerLink="/intro/1">Principiante (Introducción)</a>
+      <a routerLink="/nivel1/intro">Nivel 1. Principiante</a>
     </li>
     <li (mouseenter)="showDescription(2)" (mouseleave)="hideDescription()">
-      <a routerLink="/tutorial/1">Intermedio (Tutorial)</a>
+      <a routerLink="/nivel2/intro">Nivel 2. Intermedio</a>
     </li>
     <li (mouseenter)="showDescription(3)" (mouseleave)="hideDescription()">
-      <a routerLink="/ejemplos/1">Experto (Ejemplos)</a>
+      <a routerLink="/nivel2/intro">Nivel 3. Avanzado</a>
     </li>
   </ul>
 
   <!-- Descripción de los niveles -->
   <div class="level-info" id="level-1">
-    Este es el nivel principiante donde aprenderás los conceptos básicos de Angular.
-  </div>
+    Introducción a los conceptos básicos y configuración inicial de Angular, abarcando desde la instalación hasta la creación y estructura de proyectos básicos, con un enfoque en componentes y binding de datos.  </div>
   <div class="level-info" id="level-2">
-    En este nivel intermedio profundizarás más en el uso de Angular para proyectos reales.
-  </div>
+    Desarrollo de habilidades para manejar servicios, rutas, formularios y comunicación entre componentes, además del consumo de APIs y el uso de directivas y pipes para manipular y transformar datos.  </div>
   <div class="level-info" id="level-3">
-    Aquí aprenderás técnicas avanzadas y ejemplos prácticos de Angular.
-  </div>
+    Aplicación de técnicas avanzadas para la gestión del estado, testing, optimización del rendimiento, autenticación y despliegue, así como la actualización y migración de aplicaciones Angular existentes.  </div>
 </div>
