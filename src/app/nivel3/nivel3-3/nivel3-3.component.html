@@ -1,3 +1,122 @@
 <div class="tutorial-page">
+    <h1>Optimización y Desempeño</h1>
     
+    <p>En aplicaciones Angular grandes y complejas, el rendimiento puede convertirse en un desafío. La optimización del desempeño no solo mejora la experiencia del usuario, sino que también reduce los costos de operación al minimizar el uso de recursos. Angular proporciona diversas herramientas y técnicas para optimizar el rendimiento de tus aplicaciones.</p>
+    
+    <h2>Introducción a la Optimización en Angular</h2>
+    <p>Optimizar una aplicación Angular implica mejorar su velocidad de carga, reducir el tiempo de respuesta y garantizar una experiencia de usuario fluida. A continuación, se presentan las principales estrategias para lograrlo.</p>
+    
+    <h2>Lazy Loading de Módulos</h2>
+    <p>El <strong>Lazy Loading</strong> permite cargar módulos de Angular solo cuando son necesarios, reduciendo el tamaño inicial del bundle y mejorando los tiempos de carga.</p>
+    
+    <h3>Beneficios del Lazy Loading</h3>
+    <ul>
+        <li>Reducción del tamaño inicial del bundle.</li>
+        <li>Mejora de los tiempos de carga de la aplicación.</li>
+        <li>Optimización del uso de recursos al cargar solo lo necesario.</li>
+    </ul>
+    
+    <h3>Implementación del Lazy Loading</h3>
+    <p>Para implementar el Lazy Loading, sigue estos pasos:</p>
+    
+    <h4>1. Crear un Módulo para Lazy Loading</h4>
+    <p>Genera un nuevo módulo que se cargará de forma perezosa:</p>
+    
+    <pre>
+ng generate module modulo-lazy --route modulo-lazy --module app.module
+    </pre>
+    
+    <p>Este comando crea un módulo llamado <code>ModuloLazy</code> y configura la ruta para el Lazy Loading.</p>
+    
+    <h4>2. Configurar las Rutas</h4>
+    <p>En <code>app-routing.module.ts</code>, asegúrate de que la ruta para el módulo perezoso esté correctamente configurada:</p>
+    
+    <pre>
+        {{pre1}}
+    </pre>
+    
+    <h4>3. Verificar la Carga del Módulo</h4>
+    <p>Navega a <code>/modulo-lazy</code> en tu aplicación. El módulo se cargará solo cuando accedas a esta ruta, lo que se puede verificar observando las solicitudes de red en las herramientas de desarrollo del navegador.</p>
+    
+    <h2>Change Detection Strategy</h2>
+    <p>Angular utiliza un mecanismo de detección de cambios para sincronizar el modelo de datos con la vista. La estrategia por defecto puede ser ineficiente en aplicaciones grandes, por lo que es recomendable utilizar la estrategia <strong>OnPush</strong> cuando sea posible.</p>
+    
+    <h3>Estrategias de Detección de Cambios</h3>
+    <ul>
+        <li><strong>Default:</strong> Angular verifica todos los componentes en cada ciclo de detección de cambios.</li>
+        <li><strong>OnPush:</strong> Angular solo verifica los componentes cuando cambian sus entradas (inputs) o cuando se emiten eventos.</li>
+    </ul>
+    
+    <h3>Implementación de OnPush</h3>
+    <p>Para utilizar la estrategia <code>OnPush</code>, modifica el decorador <code>{{component}}</code> del componente:</p>
+    
+    <pre>
+        {{pre2}}
+    </pre>
+    
+    <p>Con <code>OnPush</code>, Angular optimiza la detección de cambios, mejorando el rendimiento al reducir la cantidad de verificaciones necesarias.</p>
+    
+    <h2>Optimización de Bundle Size</h2>
+    <p>Reducir el tamaño del bundle es crucial para mejorar los tiempos de carga. Angular CLI ofrece varias opciones para optimizar el tamaño de tu aplicación.</p>
+    
+    <h3>Uso de Angular CLI para Producción</h3>
+    <p>Compila tu aplicación para producción utilizando el siguiente comando:</p>
+    
+    <pre>
+ng build --prod
+    </pre>
+    
+    <p>Este comando habilita optimizaciones como la minificación, la eliminación de código muerto (tree shaking) y la compilación Ahead-Of-Time (AOT).</p>
+    
+    <h3>Análisis y Reducción del Tamaño del Bundle</h3>
+    <p>Utiliza herramientas como <strong>source-map-explorer</strong> para analizar el tamaño de tu bundle:</p>
+    
+    <pre>
+npm install -g source-map-explorer
+source-map-explorer dist/mi-primera-app/main.*.js
+    </pre>
+    
+    <p>Esta herramienta te muestra qué partes de tu código ocupan más espacio, permitiéndote identificar áreas para optimizar.</p>
+    
+    <h2>Tree Shaking y AOT Compilation</h2>
+    <p><strong>Tree Shaking</strong> es una técnica que elimina el código no utilizado durante la compilación. <strong>Ahead-Of-Time (AOT)</strong> compila tu aplicación antes de que se ejecute en el navegador, mejorando el rendimiento.</p>
+    
+    <h3>Beneficios de Tree Shaking y AOT</h3>
+    <ul>
+        <li>Reducción del tamaño del bundle.</li>
+        <li>Mejor rendimiento en tiempo de ejecución.</li>
+        <li>Errores detectados en tiempo de compilación.</li>
+    </ul>
+    
+    <h3>Implementación en Angular CLI</h3>
+    <p>Angular CLI habilita automáticamente Tree Shaking y AOT en el modo de producción. Asegúrate de utilizar el comando <code>ng build --prod</code> para aprovechar estas optimizaciones.</p>
+    
+    <h2>Uso de TrackBy en *ngFor</h2>
+    <p>Cuando trabajas con listas grandes, Angular necesita rastrear cada elemento para detectar cambios. Utilizar <code>trackBy</code> mejora el rendimiento al proporcionar una identificación única para cada elemento.</p>
+    
+    <h3>Implementación de TrackBy</h3>
+    <p>En el componente, define una función <code>trackBy</code>:</p>
+    
+    <pre>
+        {{pre3}}
+    </pre>
+    
+    <p>En la plantilla, aplica <code>trackBy</code> en el *ngFor:</p>
+    
+    <pre>
+        {{pre4}}
+    </pre>
+    
+    <p>Esto ayuda a Angular a identificar de manera única cada elemento, evitando recreaciones innecesarias y mejorando el rendimiento.</p>
+    
+    <h2>Prácticas Recomendada</h2>
+    <ul>
+        <li>Implementa Lazy Loading para módulos que no son críticos en la carga inicial.</li>
+        <li>Utiliza la estrategia de detección de cambios <code>OnPush</code> cuando sea posible.</li>
+        <li>Analiza y optimiza el tamaño de tu bundle regularmente.</li>
+        <li>Aplica <code>trackBy</code> en listas grandes para mejorar el rendimiento.</li>
+    </ul>
+    
+    <h2>Próximos Pasos</h2>
+    <p>Con una comprensión sólida de la optimización y el desempeño, el siguiente tema será la autenticación y autorización en Angular, que cubriremos en la próxima página.</p>
 </div>

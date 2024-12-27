@@ -1,3 +1,112 @@
 <div class="tutorial-page">
+    <h1>Gestión de Estado con NgRx</h1>
+    
+    <p>En aplicaciones Angular grandes y complejas, la gestión del estado puede convertirse en un desafío. NgRx es una biblioteca que implementa el patrón de arquitectura Redux, proporcionando una manera estructurada y predecible de manejar el estado de la aplicación.</p>
+    
+    <h2>¿Qué es NgRx?</h2>
+    <p>NgRx es una colección de bibliotecas inspiradas en Redux, que facilita la gestión del estado reactivo en aplicaciones Angular. Utiliza un almacén centralizado para mantener el estado de la aplicación, lo que mejora la predictibilidad y facilita la depuración.</p>
+    
+    <h2>Componentes Clave de NgRx</h2>
+    <ul>
+        <li><strong>Store:</strong> Almacén centralizado que mantiene el estado de la aplicación.</li>
+        <li><strong>Actions:</strong> Eventos que describen una intención de cambiar el estado.</li>
+        <li><strong>Reducers:</strong> Funciones puras que determinan cómo el estado cambia en respuesta a una acción.</li>
+        <li><strong>Selectors:</strong> Funciones que extraen piezas específicas del estado.</li>
+        <li><strong>Effects:</strong> Manejan operaciones asíncronas y efectos secundarios.</li>
+    </ul>
+    
+    <h2>Instalación de NgRx</h2>
+    <p>Para comenzar a usar NgRx en tu proyecto Angular, instala las siguientes dependencias:</p>
+    
+    <pre>
+npm install {{ngrx}}/store {{ngrx}}/effects {{ngrx}}/store-devtools --save
+    </pre>
+    
+    <h2>Configurando el Store</h2>
+    <p>Vamos a configurar el Store de NgRx para manejar el estado de posts en nuestra aplicación.</p>
+    
+    <h3>1. Definir el Estado</h3>
+    <p>En <code>src/app/state/post.state.ts</code>, define la interfaz del estado y el estado inicial:</p>
+    
+    <pre>
+        {{pre1}}
+    </pre>
+    
+    <h3>2. Definir Acciones</h3>
+    <p>En <code>src/app/state/post.actions.ts</code>, define las acciones relacionadas con los posts:</p>
+    
+    <pre>
+        {{pre2}}
+    </pre>
+    
+    <h3>3. Crear Reducer</h3>
+    <p>En <code>src/app/state/post.reducer.ts</code>, crea el reducer para manejar las acciones:</p>
+    
+    <pre>
+        {{pre3}}
+    </pre>
+    
+    <h3>4. Configurar el Store en el Módulo</h3>
+    <p>En <code>app.module.ts</code>, importa <code>StoreModule</code> y configura el reducer:</p>
+    
+    <pre>
+        {{pre4}}
+    </pre>
+    
+    <p>Esto configura el Store con el estado <code>postState</code> gestionado por <code>postReducer</code> y habilita las herramientas de desarrollo de NgRx.</p>
+    
+    <h3>5. Definir Selectors</h3>
+    <p>En <code>src/app/state/post.selectors.ts</code>, define selectors para acceder al estado:</p>
+    
+    <pre>
+        {{pre5}}
+    </pre>
+    
+    <h3>6. Implementar Effects para Manejar Asincronía</h3>
+    <p>NgRx Effects permite manejar operaciones asíncronas como llamadas a APIs.</p>
+    
+    <h4>Generando el Effect</h4>
+    <pre>
+ng generate effect post --group
+    </pre>
+    
+    <h4>Implementando el Effect</h4>
+    <p>En <code>src/app/state/post.effects.ts</code>, implementa el efecto para cargar posts:</p>
+    
+    <pre>
+        {{pre6}}
+    </pre>
+    
+    <p>Este efecto escucha la acción <code>cargarPosts</code>, realiza una solicitud para obtener los posts y luego emite una acción de éxito o fallo según corresponda.</p>
+    
+    <h3>7. Registrar los Effects en el Módulo</h3>
+    <p>En <code>app.module.ts</code>, importa <code>EffectsModule</code> y registra el effect:</p>
+    
+    <pre>
+        {{pre7}}
+    </pre>
+    
+    <h2>Consumir el Estado en Componentes</h2>
+    <p>Ahora, veamos cómo consumir el estado gestionado por NgRx en un componente.</p>
+    
+    <h3>Modificar <code>hola-mundo.component.ts</code></h3>
+    
+    <pre>
+        {{pre8}}
+    </pre>
+    
+    <h3>Actualizar la Plantilla <code>hola-mundo.component.html</code></h3>
+    
+    <pre>
+        {{pre9}}
+    </pre>
+    
+    <p>En este ejemplo, estamos utilizando Selectors para acceder al estado de posts, así como a los indicadores de carga y error. Esto permite una gestión más eficiente y centralizada del estado de la aplicación.</p>
+    
+    <h2>Práctica Recomendada</h2>
+    <p>Utiliza NgRx para manejar el estado de aplicaciones complejas donde múltiples componentes necesitan acceder y modificar datos compartidos. Esto garantiza una fuente única de verdad y facilita la trazabilidad de los cambios de estado.</p>
+    
+    <h2>Próximos Pasos</h2>
+    <p>Después de gestionar el estado con NgRx, el siguiente tema será el testing en Angular, donde aprenderás cómo realizar pruebas unitarias y de integración para asegurar la calidad de tu aplicación.</p>
     
 </div>

@@ -1,3 +1,79 @@
 <div class="tutorial-page">
+    <h1>Testing en Angular</h1>
     
+    <p>El testing es una parte crucial del desarrollo de software, ya que garantiza que tu aplicación funcione correctamente y facilita el mantenimiento y la escalabilidad del código. Angular proporciona herramientas integradas para realizar pruebas unitarias y de integración de manera eficiente.</p>
+    
+    <h2>Tipos de Pruebas en Angular</h2>
+    <ul>
+        <li><strong>Pruebas Unitarias:</strong> Prueban unidades individuales de código (como componentes, servicios, etc.) de forma aislada.</li>
+        <li><strong>Pruebas de Integración:</strong> Prueban la interacción entre múltiples unidades de código.</li>
+        <li><strong>Pruebas End-to-End (E2E):</strong> Simulan el comportamiento del usuario y prueban la aplicación completa en un entorno real.</li>
+    </ul>
+    
+    <h2>Configuración de Pruebas Unitarias con Karma y Jasmine</h2>
+    <p>Angular utiliza <strong>Karma</strong> como ejecutor de pruebas y <strong>Jasmine</strong> como framework de pruebas.</p>
+    
+    <h3>Estructura de Pruebas</h3>
+    <p>Cuando generas un componente o servicio con Angular CLI, automáticamente se crean archivos de pruebas con la extensión <code>.spec.ts</code>.</p>
+    
+    <h3>Ejemplo de Prueba Unitaria para un Componente</h3>
+    <p>Consideremos el componente <code>HolaMundoComponent</code>. Veamos su archivo de pruebas <code>hola-mundo.component.spec.ts</code>:</p>
+    
+    <pre>
+        {{pre1}}
+    </pre>
+    
+    <p>En este ejemplo:</p>
+    <ul>
+        <li>Se crean spies para <code>DataService</code> y <code>ApiService</code> para simular sus comportamientos.</li>
+        <li>Se prueban diferentes aspectos del componente, como su creación, propiedades predeterminadas, métodos y la carga de datos desde servicios.</li>
+    </ul>
+    
+    <h2>Ejemplo de Prueba Unitaria para un Servicio</h2>
+    <p>Consideremos el servicio <code>ApiService</code>. Veamos su archivo de pruebas <code>api.service.spec.ts</code>:</p>
+    
+    <pre>
+        {{pre2}}
+    </pre>
+    
+    <p>Este conjunto de pruebas verifica que el servicio:</p>
+    <ul>
+        <li>Se crea correctamente.</li>
+        <li>Realiza solicitudes GET y POST correctamente.</li>
+        <li>Maneja errores de manera adecuada.</li>
+    </ul>
+    
+    <h2>Pruebas de Componentes</h2>
+    <p>Las pruebas de componentes verifican la lógica y la interacción del componente con el DOM. Puedes simular eventos, probar bindings y asegurar que el componente responda correctamente a diferentes estados.</p>
+    
+    <h3>Ejemplo de Prueba de Componente</h3>
+    <p>En <code>hola-mundo.component.spec.ts</code>, puedes agregar pruebas para verificar el comportamiento del componente al interactuar con el usuario.</p>
+    
+    <pre>
+        {{pre3}}
+    </pre>
+    
+    <p>Esta prueba simula la entrada del usuario en el campo de texto y verifica que la propiedad <code>nombre</code> se actualice correctamente en la vista.</p>
+    
+    <h2>Pruebas End-to-End (E2E)</h2>
+    <p>Las pruebas E2E simulan el comportamiento del usuario y prueban la aplicación completa en un entorno realista. Angular utiliza <strong>Protractor</strong> para realizar estas pruebas.</p>
+    
+    <h3>Ejemplo de Prueba E2E</h3>
+    <p>En el archivo de pruebas E2E, puedes definir escenarios que cubren flujos completos de usuario:</p>
+    
+    <pre>
+        {{pre4}}
+    </pre>
+    
+    <p>Estas pruebas verifican que:</p>
+    <ul>
+        <li>Se muestra el mensaje de bienvenida.</li>
+        <li>Un nuevo post se puede crear exitosamente a través del formulario.</li>
+    </ul>
+    
+    <h2>Práctica Recomendada</h2>
+    <p>Implementa pruebas unitarias para cada componente y servicio, y utiliza pruebas E2E para cubrir los flujos críticos de tu aplicación. Esto asegura una mayor calidad y facilita el mantenimiento del código.</p>
+    
+    <h2>Próximos Pasos</h2>
+    <p>Con el conocimiento de testing, el siguiente paso es optimizar el rendimiento de tu aplicación Angular, lo que exploraremos en la próxima página.</p>
 </div>

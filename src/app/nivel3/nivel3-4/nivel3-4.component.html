@@ -1,3 +1,127 @@
 <div class="tutorial-page">
+    <h1>Autenticación y Autorización</h1>
     
+    <p>La autenticación y autorización son componentes esenciales en muchas aplicaciones web, asegurando que solo los usuarios autorizados puedan acceder a ciertas funcionalidades y datos. Angular ofrece diversas estrategias y herramientas para implementar estos mecanismos de seguridad de manera efectiva.</p>
+    
+    <h2>Introducción a la Autenticación y Autorización</h2>
+    <p><strong>Autenticación:</strong> Verifica la identidad de un usuario, asegurándose de que es quien dice ser.</p>
+    <p><strong>Autorización:</strong> Determina qué acciones y recursos puede acceder un usuario autenticado.</p>
+    
+    <h2>Implementación de Autenticación</h2>
+    <p>Vamos a implementar un sistema de autenticación básico utilizando tokens JWT (JSON Web Tokens).</p>
+    
+    <h3>1. Creación del Servicio de Autenticación</h3>
+    <p>Genera un servicio llamado <code>AuthService</code>:</p>
+    
+    <pre>
+ng generate service auth
+    </pre>
+    
+    <h4>Implementación de <code>auth.service.ts</code></h4>
+    
+    <pre>
+        {{pre1}}
+    </pre>
+    
+    <p>Este servicio maneja el inicio de sesión, cierre de sesión y verifica si el usuario está autenticado mediante el almacenamiento del token JWT en <code>localStorage</code>.</p>
+    
+    <h3>2. Protección de Rutas con Guardias</h3>
+    <p>Utiliza guardias de ruta para proteger rutas que requieren autenticación.</p>
+    
+    <h4>Generando el Guard de Autenticación</h4>
+    <pre>
+ng generate guard auth
+    </pre>
+    
+    <h4>Implementación de <code>auth.guard.ts</code></h4>
+    
+    <pre>
+        {{pre2}}
+    </pre>
+    
+    <p>Este guard verifica si el usuario está autenticado antes de permitir el acceso a ciertas rutas. Si no está autenticado, redirige al usuario a la página de inicio de sesión.</p>
+    
+    <h3>3. Creación de Componentes de Autenticación</h3>
+    <p>Genera componentes para el inicio de sesión y el registro:</p>
+    
+    <pre>
+ng generate component login
+ng generate component register
+    </pre>
+    
+    <h4>Implementación de <code>login.component.ts</code></h4>
+    
+    <pre>
+        {{pre3}}
+    </pre>
+    
+    <h4>Implementación de <code>login.component.html</code></h4>
+    
+    <pre>
+        {{pre4}}
+    </pre>
+    
+    <h3>4. Actualización de las Rutas para Incluir Autenticación</h3>
+    <p>En <code>app-routing.module.ts</code>, protege las rutas que requieren autenticación:</p>
+    
+    <pre>
+        {{pre5}}
+    </pre>
+    
+    <p>Esto asegura que solo los usuarios autenticados puedan acceder a <code>/modulo-lazy</code>, mientras que las rutas de <code>/login</code> y <code>/register</code> están abiertas.</p>
+    
+    <h2>Gestión de Sesiones</h2>
+    <p>Mantener la sesión del usuario de manera segura es crucial para la seguridad de la aplicación. A continuación, se presentan algunas prácticas recomendadas:</p>
+    
+    <h3>Almacenamiento Seguro de Tokens</h3>
+    <ul>
+        <li>Utiliza <code>HttpOnly Cookies</code> para almacenar tokens, evitando accesos mediante JavaScript.</li>
+        <li>Si usas <code>localStorage</code>, asegúrate de manejar correctamente los tokens para prevenir ataques XSS.</li>
+    </ul>
+    
+    <h3>Renovación y Expiración de Tokens</h3>
+    <p>Implementa la renovación de tokens antes de que expiren para mantener la sesión activa sin interrupciones.</p>
+    
+    <h4>Ejemplo de Renovación de Token</h4>
+    <pre>
+        {{pre6}}
+    </pre>
+    
+    <p>Este método realiza una solicitud para renovar el token y lo almacena nuevamente en <code>localStorage</code>.</p>
+    
+    <h2>Integración con Servicios Externos</h2>
+    <p>Angular facilita la integración con servicios de autenticación externos como Google, Facebook y otros proveedores de OAuth.</p>
+    
+    <h3>Autenticación con Google</h3>
+    <p>Para implementar la autenticación con Google, sigue estos pasos:</p>
+    
+    <h4>1. Registrar la Aplicación en Google</h4>
+    <p>Registra tu aplicación en la consola de desarrolladores de Google para obtener las credenciales necesarias.</p>
+    
+    <h4>2. Instalación de Bibliotecas Necesarias</h4>
+    <pre>
+npm install {{abacritt}}/angularx-social-login
+    </pre>
+    
+    <h4>3. Configuración en <code>app.module.ts</code></h4>
+    <pre>
+        {{pre7}}
+    </pre>
+    
+    <h4>4. Implementación en el Componente de Login</h4>
+    <pre>
+        {{pre8}}
+    </pre>
+    
+    <p>Este método permite a los usuarios iniciar sesión utilizando sus cuentas de Google. Asegúrate de manejar correctamente el token en tu backend para validar la autenticación.</p>
+    
+    <h2>Prácticas Recomendada</h2>
+    <ul>
+        <li>Almacena tokens de manera segura para prevenir ataques XSS.</li>
+        <li>Implementa la renovación de tokens para mantener sesiones activas.</li>
+        <li>Utiliza servicios de autenticación externos cuando sea apropiado para mejorar la seguridad y la experiencia del usuario.</li>
+    </ul>
+    
+    <h2>Próximos Pasos    </h2>
+    <p>Ahora que hemos implementado la autenticación y autorización, el siguiente tema será el despliegue de aplicaciones Angular, que cubriremos en la próxima página.</p>
 </div>

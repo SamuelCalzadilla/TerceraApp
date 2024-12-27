@@ -1,3 +1,123 @@
 <div class="tutorial-page">
+    <h1>Despliegue de Aplicaciones Angular</h1>
+    
+    <p>Una vez que tu aplicación Angular está desarrollada y optimizada, el siguiente paso es desplegarla en un entorno de producción para que los usuarios puedan acceder a ella. Angular CLI facilita el proceso de compilación y despliegue mediante comandos simples y configuraciones personalizables.</p>
+    
+    <h2>Preparar la Aplicación para Producción</h2>
+    <p>Antes de desplegar tu aplicación, es importante compilarla en modo de producción, lo que aplica optimizaciones como la minificación, la eliminación de código muerto y la compilación Ahead-Of-Time (AOT).</p>
+    
+    <h3>Compilación para Producción con Angular CLI</h3>
+    <p>Ejecuta el siguiente comando para compilar tu aplicación en modo de producción:</p>
+    
+    <pre>
+ng build --prod
+    </pre>
+    
+    <p>Este comando genera una carpeta <code>dist/</code> con los archivos optimizados listos para ser desplegados.</p>
+    
+    <h2>Despliegue en Servidores Populares</h2>
+    
+    <h3>1. Despliegue en Firebase Hosting</h3>
+    <p>Firebase Hosting es una opción popular para desplegar aplicaciones Angular debido a su facilidad de uso y rendimiento.</p>
+    
+    <h4>Pasos para Desplegar en Firebase</h4>
+    <ol>
+        <li>Instala la herramienta de línea de comandos de Firebase:</li>
+        <pre>
+npm install -g firebase-tools
+        </pre>
+        <li>Inicia sesión en Firebase:</li>
+        <pre>
+firebase login
+        </pre>
+        <li>Inicializa el proyecto de Firebase en tu aplicación Angular:</li>
+        <pre>
+firebase init
+        </pre>
+        <li>Selecciona <strong>Hosting</strong> y sigue las instrucciones para configurar el despliegue.</li>
+        <li>Compila tu aplicación:</li>
+        <pre>
+ng build --prod
+        </pre>
+        <li>Despliega a Firebase Hosting:</li>
+        <pre>
+firebase deploy
+        </pre>
+    </ol>
+    
+    <h3>2. Despliegue en Netlify</h3>
+    <p>Netlify es otra plataforma popular que ofrece despliegues continuos y características avanzadas para aplicaciones web.</p>
+    
+    <h4>Pasos para Desplegar en Netlify</h4>
+    <ol>
+        <li>Regístrate o inicia sesión en [Netlify](https://www.netlify.com/).</li>
+        <li>Conecta tu repositorio GitHub, GitLab o Bitbucket con Netlify.</li>
+        <li>Configura el comando de construcción como <code>ng build --prod</code> y el directorio de publicación como <code>dist/mi-primera-app</code>.</li>
+        <li>Haz clic en "Deploy" y Netlify construirá y desplegará tu aplicación automáticamente.</li>
+    </ol>
+    
+    <h3>3. Despliegue en Servidores Propios (Apache, Nginx)</h3>
+    <p>Si prefieres utilizar tus propios servidores, puedes seguir estos pasos básicos para desplegar tu aplicación Angular.</p>
+    
+    <h4>Pasos para Desplegar en Nginx</h4>
+    <ol>
+        <li>Compila tu aplicación en modo de producción:</li>
+        <pre>
+ng build --prod
+        </pre>
+        <li>Transfiere los archivos de <code>dist/mi-primera-app</code> a tu servidor.</li>
+        <li>Configura Nginx para servir los archivos estáticos:</li>
+        <pre>
+            {{pre1}}
+        </pre>
+        <li>Reinicia Nginx para aplicar la configuración:</li>
+        <pre>
+sudo systemctl restart nginx
+        </pre>
+    </ol>
+    
+    <h2>Configuración de Servidor para SPA</h2>
+    <p>Las aplicaciones de una sola página (SPA) como Angular requieren una configuración especial en el servidor para manejar las rutas correctamente. Es crucial que todas las rutas apunten al <code>index.html</code> para que Angular pueda gestionar la navegación.</p>
+    
+    <h3>Configuración en Nginx</h3>
+    <pre>
+        {{pre2}}
+    </pre>
+    
+    <h3>Configuración en Apache</h3>
+    <pre>
+        {{pre3}}
+    </pre>
+    
+    <h2>Uso de Continuous Integration/Continuous Deployment (CI/CD)</h2>
+    <p>Implementar pipelines de CI/CD automatiza el proceso de construcción y despliegue, asegurando que las actualizaciones se realicen de manera consistente y eficiente.</p>
+    
+    <h3>Ejemplo con GitHub Actions</h3>
+    <p>Configura GitHub Actions para desplegar tu aplicación automáticamente cuando se realicen cambios en la rama principal.</p>
+    
+    <h4>Archivo de Workflow: <code>.github/workflows/deploy.yml</code></h4>
+    <pre>
+        {{pre4}}
+    </pre>
+    
+    <p>Este workflow realiza las siguientes acciones:</p>
+    <ul>
+        <li>Chequea el repositorio.</li>
+        <li>Configura la versión de Node.js.</li>
+        <li>Instala las dependencias.</li>
+        <li>Compila la aplicación.</li>
+        <li>Despliega a Firebase Hosting.</li>
+    </ul>
+    
+    <h2>Prácticas Recomendada</h2>
+    <ul>
+        <li>Utiliza Lazy Loading para módulos que no son críticos en la carga inicial.</li>
+        <li>Implementa estrategias de detección de cambios optimizadas como <code>OnPush</code>.</li>
+        <li>Analiza y optimiza regularmente el tamaño de tu bundle.</li>
+        <li>Automatiza el proceso de despliegue mediante pipelines de CI/CD.</li>
+    </ul>
+    
+    <h2>Próximos Pasos    </h2>
+    <p>Con la aplicación desplegada, el siguiente tema será la migración y actualización de Angular, asegurando que tu proyecto se mantenga actualizado con las últimas mejoras y características. Esto lo cubriremos en la próxima página.</p>
     
 </div>
