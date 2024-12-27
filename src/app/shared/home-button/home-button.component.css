@@ -1,0 +1,13 @@
+button, a {
+    padding: 10px 20px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none; /* Eliminar subrayado de los enlaces */
+    cursor: pointer;
+}
+
+button:hover, a:hover {
+    background-color: #1f6391;
+}

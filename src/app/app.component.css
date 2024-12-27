@@ -11,7 +11,7 @@
   /* Contenedor principal ajustado */
   .content-wrapper {
     margin: 20px auto;
-    margin-left: 270px; /* Desplazamiento para acomodar el menú lateral */
+    margin-left: 300px; /* Desplazamiento para acomodar el menú lateral */
     max-width: calc(100% - 270px); /* Ajustar el ancho al tamaño del menú */
     background-color: white;
     border-radius: 16px;
@@ -43,21 +43,6 @@ app-previous-page, app-home-button, app-next-page {
     display: inline-block; /* Asegurarse de que los componentes se comporten como elementos de bloque en línea */
     margin: 0 10px; /* Espaciado entre los botones */
     margin-top: 30px;
-}
-
-
-button, a {
-    padding: 10px 20px;
-    background-color: #2980b9;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none; /* Eliminar subrayado de los enlaces */
-    cursor: pointer;
-}
-
-button:hover, a:hover {
-    background-color: #1f6391;
 }
 
 
