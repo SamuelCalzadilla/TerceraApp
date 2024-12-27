@@ -1,3 +1,91 @@
 <div class="tutorial-page">
+    <h1>Consumo de APIs con HttpClient</h1>
     
+    <p>HttpClient es un módulo de Angular que facilita la comunicación con servicios externos mediante solicitudes HTTP. Permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) de manera sencilla y eficiente.</p>
+    
+    <h2>Introducción a HttpClient</h2>
+    <p>HttpClient es parte de <code>{{angular}}/common/http</code> y proporciona una interfaz simple y rica para interactuar con APIs RESTful. Ofrece características como interceptores, manejo de errores, y soporte para Observables.</p>
+    
+    <h2>Configuración del Módulo HttpClient</h2>
+    <p>Antes de utilizar HttpClient, debes importarlo en tu módulo principal.</p>
+    
+    <h3>Pasos para Importar HttpClientModule</h3>
+    <ol>
+        <li>Abre <code>app.module.ts</code>.</li>
+        <li>Importa <code>HttpClientModule</code>:</li>
+    </ol>
+    
+    <pre>
+        {{pre1}}
+    </pre>
+    
+    <p>3. Añade <code>HttpClientModule</code> al array de <code>imports</code>:</p>
+    
+    <pre>
+        {{pre2}}
+    </pre>
+    
+    <p>Con esto, HttpClient está listo para ser utilizado en tus servicios y componentes.</p>
+    
+    <h2>Creando un Servicio para Consumir la API</h2>
+    <p>Vamos a crear un servicio llamado <code>ApiService</code> que utilizará HttpClient para comunicarse con una API externa.</p>
+    
+    <h3>Generando el Servicio</h3>
+    <pre>
+ng generate service api
+    </pre>
+    
+    <h3>Implementando el Servicio</h3>
+    <p>En <code>api.service.ts</code>, implementa métodos para realizar solicitudes HTTP:</p>
+    
+    <pre>
+        {{pre3}}
+    </pre>
+    
+    <p>En este ejemplo, <code>obtenerPosts()</code> realiza una solicitud GET para obtener una lista de posts, y <code>crearPost()</code> realiza una solicitud POST para crear un nuevo post. Ambos métodos manejan errores mediante el operador <code>catchError</code>.</p>
+    
+    <h2>Consumir el Servicio en un Componente</h2>
+    <p>Vamos a utilizar el servicio <code>ApiService</code> en el componente <code>hola-mundo</code> para mostrar y crear posts.</p>
+    
+    <h3>Modificar <code>hola-mundo.component.ts</code></h3>
+    
+    <pre>
+        {{pre4}}
+    </pre>
+    
+    <h3>Actualizar la Plantilla <code>hola-mundo.component.html</code></h3>
+    
+    <pre>
+        {{pre5}}
+    </pre>
+    
+    <p>Este código permite mostrar una lista de posts obtenidos de una API y crear nuevos posts mediante un formulario simple.</p>
+    
+    <h2>Manejo de Errores</h2>
+    <p>Es importante manejar errores al realizar solicitudes HTTP para mejorar la experiencia del usuario y facilitar la depuración.</p>
+    
+    <h3>Manejo de Errores en el Servicio</h3>
+    <p>En <code>api.service.ts</code>, hemos implementado el método <code>manejarError</code> para capturar y procesar errores:</p>
+    
+    <pre>
+        {{pre6}}
+    </pre>
+    
+    <p>Este método diferencia entre errores del cliente y del servidor, registrando mensajes apropiados y devolviendo un mensaje de error genérico al componente.</p>
+    
+    <h3>Manejo de Errores en el Componente</h3>
+    <p>En el componente, puedes manejar los errores de las solicitudes HTTP de la siguiente manera:</p>
+    
+    <pre>
+        {{pre7}}
+    </pre>
+    
+    <p>Esto permite reaccionar de manera apropiada ante fallos en las solicitudes, mejorando la robustez de la aplicación.</p>
+    
+    <h2>Práctica Recomendada</h2>
+    <p>Utiliza servicios para manejar todas las comunicaciones con APIs externas y centraliza la lógica de manejo de errores en los servicios. Esto facilita la reutilización y el mantenimiento del código.</p>
+    
+    <h2>Próximos Pasos</h2>
+    <p>Ahora que sabemos cómo consumir APIs, el siguiente paso es trabajar con formularios en Angular, tanto template-driven como reactivos, lo que cubriremos en la próxima página.</p>
+
 </div>

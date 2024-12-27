@@ -1,3 +1,114 @@
 <div class="tutorial-page">
+    <h1>Pipes en Angular</h1>
     
+    <p>Los Pipes en Angular son herramientas poderosas que permiten transformar datos directamente en las plantillas. Facilitan la presentación de datos de manera consistente y formateada sin necesidad de manipularlos en el componente.</p>
+    
+    <h2>¿Qué son los Pipes?</h2>
+    <p>Un Pipe toma un valor, lo transforma y devuelve un valor transformado para su visualización. Angular viene con varios Pipes incorporados, y también permite crear Pipes personalizados.</p>
+    
+    <h2>Pipes Incorporados en Angular</h2>
+    <p>Angular proporciona una variedad de Pipes incorporados que cubren las necesidades más comunes de transformación de datos:</p>
+    
+    <ul>
+        <li><strong>DatePipe:</strong> Formatea fechas.</li>
+        <li><strong>UpperCasePipe y LowerCasePipe:</strong> Convierte cadenas a mayúsculas o minúsculas.</li>
+        <li><strong>CurrencyPipe:</strong> Formatea números como monedas.</li>
+        <li><strong>PercentPipe:</strong> Formatea números como porcentajes.</li>
+        <li><strong>JsonPipe:</strong> Convierte objetos a formato JSON.</li>
+        <li><strong>SlicePipe:</strong> Extrae una sección de una cadena o array.</li>
+        <li><strong>DecimalPipe:</strong> Formatea números decimales.</li>
+    </ul>
+    
+    <h2>Uso de Pipes en la Plantilla</h2>
+    <p>Los Pipes se aplican en las plantillas usando la sintaxis <code>{{code1}}</code>. Puedes encadenar múltiples Pipes para realizar transformaciones más complejas.</p>
+    
+    <h3>Ejemplos Prácticos</h3>
+    
+    <h4>DatePipe</h4>
+    <p>Formatea una fecha:</p>
+    
+    <pre>
+        {{pre1}}
+    </pre>
+    
+    <p>En el componente, define la propiedad <code>today</code>:</p>
+    
+    <pre>
+today: number = Date.now();
+    </pre>
+    
+    <p>Esto renderizará algo como: <em>Fecha actual: martes, 26 de diciembre de 2024</em>.</p>
+    
+    <h4>UpperCasePipe y LowerCasePipe</h4>
+    <p>Convierte una cadena a mayúsculas y minúsculas:</p>
+    
+    <pre>
+        {{pre2}}
+    </pre>
+    
+    <p>Si <code>nombre = 'Angular'</code>, se renderizará:</p>
+    <ul>
+        <li>Original: Angular</li>
+        <li>Mayúsculas: ANGULAR</li>
+        <li>Minúsculas: angular</li>
+    </ul>
+    
+    <h4>CurrencyPipe</h4>
+    <p>Formatea un número como moneda:</p>
+    
+    <pre>
+precio: number = 1234.56;
+    </pre>
+    
+    <pre>
+        {{pre3}}
+    </pre>
+    
+    <p>Esto renderizará: <em>Precio: $1,234.56</em>.</p>
+    
+    <h2>Creando un Pipe Personalizado</h2>
+    <p>Además de los Pipes incorporados, puedes crear tus propios Pipes para realizar transformaciones específicas.</p>
+    
+    <h3>Ejemplo: Pipe para Capitalizar Texto</h3>
+    <p>Vamos a crear un Pipe que capitalice la primera letra de cada palabra en una cadena.</p>
+    
+    <h4>Generando el Pipe</h4>
+    <pre>
+ng generate pipe capitalizar
+    </pre>
+    
+    <h4>Implementando el Pipe</h4>
+    <p>En <code>capitalizar.pipe.ts</code>, implementa la lógica de capitalización:</p>
+    
+    <pre>
+        {{pre4}}
+    </pre>
+    
+    <h4>Usando el Pipe Personalizado en la Plantilla</h4>
+    <p>En <code>hola-mundo.component.html</code>, aplica el Pipe:</p>
+    
+    <pre>
+        {{pre5}}
+    </pre>
+    
+    <p>Si <code>nombre = 'angular framework'</code>, se renderizará: <em>Nombre Capitalizado: Angular Framework</em>.</p>
+    
+    <h2>Encadenando Pipes</h2>
+    <p>Puedes encadenar múltiples Pipes para realizar transformaciones más complejas.</p>
+    
+    <h3>Ejemplo de Encadenamiento</h3>
+    <p>En la plantilla:</p>
+    
+    <pre>
+        {{pre6}}
+    </pre>
+    
+    <p>Esto aplicará primero el <code>DatePipe</code>, luego convertirá el resultado a mayúsculas, y lo mismo con el <code>CurrencyPipe</code>.</p>
+    
+    <h2>Práctica Recomendada</h2>
+    <p>Utiliza Pipes para mantener la lógica de presentación separada de la lógica de negocio en tus componentes. Esto mejora la mantenibilidad y la legibilidad del código.</p>
+    
+    <h2>Próximos Pasos</h2>
+    <p>Ahora que hemos cubierto los Pipes, el siguiente tema será la gestión de estado con NgRx, que nos permitirá manejar el estado de aplicaciones complejas de manera eficiente.</p>
+
 </div>

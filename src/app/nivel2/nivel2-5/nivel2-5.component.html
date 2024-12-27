@@ -1,3 +1,100 @@
 <div class="tutorial-page">
+    <h1>Formularios en Angular</h1>
     
+    <p>Los formularios son una parte esencial de muchas aplicaciones web, permitiendo a los usuarios ingresar y enviar datos. Angular ofrece dos enfoques principales para manejar formularios: **Template-Driven** y **Reactive Forms**.</p>
+    
+    <h2>Tipos de Formularios en Angular</h2>
+    <ul>
+        <li><strong>Template-Driven Forms:</strong> Basados en plantillas, ideales para formularios simples y menos estructurados.</li>
+        <li><strong>Reactive Forms:</strong> Basados en código, ofrecen mayor control y flexibilidad, adecuados para formularios complejos.</li>
+    </ul>
+    
+    <h2>Formularios Template-Driven</h2>
+    
+    <h3>Características</h3>
+    <ul>
+        <li>Fácil de usar y comprender.</li>
+        <li>Utiliza directivas de Angular como <code>ngModel</code>.</li>
+        <li>Ideal para formularios simples.</li>
+    </ul>
+    
+    <h3>Ejemplo de Formulario Template-Driven</h3>
+    <p>Vamos a crear un formulario para agregar un nuevo post utilizando el enfoque Template-Driven.</p>
+    
+    <h4>Actualizar <code>hola-mundo.component.ts</code></h4>
+    
+    <pre>
+        {{pre1}}
+    </pre>
+    
+    <h4>Actualizar <code>hola-mundo.component.html</code></h4>
+    
+    <pre>
+        {{pre2}}
+    </pre>
+    
+    <p>En este formulario:</p>
+    <ul>
+        <li>Se utilizan las directivas <code>ngModel</code> para enlazar los campos del formulario con las propiedades del componente.</li>
+        <li>El atributo <code>required</code> asegura que los campos sean obligatorios.</li>
+        <li>El botón de envío está deshabilitado si el formulario no es válido.</li>
+    </ul>
+    
+    <h3>Validaciones en Formularios Template-Driven</h3>
+    <p>Angular proporciona varias validaciones integradas que puedes utilizar para asegurar la integridad de los datos ingresados por el usuario.</p>
+    
+    <h4>Ejemplo de Validaciones</h4>
+    <pre>
+        {{pre3}}
+    </pre>
+    
+    <p>Este ejemplo agrega validaciones de longitud mínima y mensajes de error que se muestran cuando los campos no cumplen con los requisitos.</p>
+    
+    <h2>Formularios Reactivos</h2>
+    
+    <h3>Características</h3>
+    <ul>
+        <li>Más control y flexibilidad sobre el formulario.</li>
+        <li>Gestión programática de formularios mediante código.</li>
+        <li>Mejor para formularios complejos con lógica avanzada.</li>
+    </ul>
+    
+    <h3>Configuración de Formularios Reactivos</h3>
+    <p>Para utilizar formularios reactivos, primero debes importar el módulo <code>ReactiveFormsModule</code> en <code>app.module.ts</code>:</p>
+    
+    <pre>
+        {{pre4}}
+    </pre>
+    
+    <h3>Creando un Formulario Reactivo</h3>
+    <p>Vamos a crear un formulario reactivo para actualizar un post existente.</p>
+    
+    <h4>Modificar <code>hola-mundo.component.ts</code></h4>
+    
+    <pre>
+        {{pre5}}
+    </pre>
+    
+    <h4>Actualizar la Plantilla <code>hola-mundo.component.html</code></h4>
+    
+    <pre>
+        {{pre6}}
+    </pre>
+    
+    <p>Este formulario reactivo permite actualizar los campos de un post seleccionado con validaciones integradas.</p>
+    
+    <h2>Prueba del Formulario Reactivo</h2>
+    <p>Implementa la lógica para manejar la actualización en <code>hola-mundo.component.ts</code>:</p>
+    
+    <pre>
+        {{pre7}}
+    </pre>
+    
+    <p>Este método verifica la validez del formulario y luego envía los datos actualizados al servicio para su procesamiento.</p>
+    
+    <h2>Práctica Recomendada</h2>
+    <p>Elige el enfoque de formulario que mejor se adapte a la complejidad de tu aplicación. Para formularios simples, los Template-Driven son suficientes, mientras que para formularios más complejos y con lógica avanzada, los Reactive Forms ofrecen mayor control.</p>
+    
+    <h2>Próximos Pasos</h2>
+    <p>Con el conocimiento de formularios, el siguiente paso es explorar las directivas en Angular, lo que nos permitirá extender la funcionalidad de la interfaz de usuario en la próxima página.</p>
 </div>

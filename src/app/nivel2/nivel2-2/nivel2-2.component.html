@@ -1,3 +1,98 @@
 <div class="tutorial-page">
+    <h1>Rutas en Angular</h1>
     
+    <p>El sistema de enrutamiento en Angular permite navegar entre diferentes vistas o componentes dentro de una aplicación de una sola página (SPA). Las rutas definen cómo se carga y se muestra el contenido en función de la URL.</p>
+    
+    <h2>Configurando el Enrutador</h2>
+    <p>Para configurar el enrutador en tu proyecto Angular, sigue estos pasos:</p>
+    
+    <h3>1. Importar Módulos Necesarios</h3>
+    <p>En <code>app.module.ts</code>, importa <code>RouterModule</code> y <code>Routes</code> desde <code>{{code1_nivel2_2}}</code>:</p>
+    
+    <pre>
+        {{pre1_nivel2_2}}
+    </pre>
+    
+    <p>En este ejemplo, se definen dos rutas:</p>
+    <ul>
+        <li><strong>Ruta Vacía (''):</strong> Carga el componente <code>HolaMundoComponent</code>.</li>
+        <li><strong>Ruta 'otro':</strong> Carga el componente <code>OtroComponenteComponent</code>.</li>
+    </ul>
+    
+    <h3>2. Crear el Componente de Ruta</h3>
+    <p>Genera un nuevo componente llamado <code>otro-componente</code>:</p>
+    
+    <pre>
+ng generate component otro-componente
+    </pre>
+    
+    <p>En <code>otro-componente.component.html</code>, añade contenido:</p>
+    
+    <pre>
+        {{pre2_nivel2_2}}
+    </pre>
+    
+    <h3>3. Añadir Enlaces de Navegación</h3>
+    <p>Para permitir la navegación entre rutas, actualiza la plantilla <code>app.component.html</code> con enlaces de navegación y un <code>router-outlet</code>:</p>
+    
+    <pre>
+        {{pre3_nivel2_2}}
+    </pre>
+    
+    <p>El elemento <code>router-outlet</code> actúa como un marcador de posición donde se renderizan los componentes de las rutas correspondientes.</p>
+    
+    <h3>4. Agregar Estilos a la Navegación</h3>
+    <p>Para mejorar la apariencia de la navegación, puedes agregar estilos en <code>styles.css</code>:</p>
+    
+    <pre>
+        {{pre4_nivel2_2}}
+    </pre>
+    
+    <p>Esto resaltará el enlace activo y mejorará la experiencia de navegación.</p>
+    
+    <h2>Protección de Rutas con Guardias</h2>
+    <p>Angular permite proteger rutas mediante guardias, que son servicios que determinan si se puede acceder a una ruta específica.</p>
+    
+    <h3>Creando un Guard para Autenticación</h3>
+    <p>Genera un guard llamado <code>auth</code>:</p>
+    
+    <pre>
+ng generate guard auth
+    </pre>
+    
+    <p>Implementa la lógica de autenticación en el guard:</p>
+    
+    <pre>
+        {{pre5_nivel2_2}}
+    </pre>
+    
+    <p>Actualiza la ruta que deseas proteger agregando el guard:</p>
+    
+    <pre>
+        {{pre6_nivel2_2}}
+    </pre>
+    
+    <p>Ahora, solo los usuarios autenticados podrán acceder a la ruta <code>/otro</code>.</p>
+    
+    <h2>Navegación Programática</h2>
+    <p>Además de los enlaces de navegación, puedes navegar programáticamente a través de código en tus componentes utilizando el servicio <code>Router</code>.</p>
+    
+    <h3>Ejemplo de Navegación Programática</h3>
+    <p>En <code>hola-mundo.component.ts</code>, inyecta <code>Router</code> y crea un método para navegar:</p>
+    
+    <pre>
+        {{pre7_nivel2_2}}
+    </pre>
+    
+    <p>En la plantilla <code>hola-mundo.component.html</code>, añade un botón para activar la navegación:</p>
+    
+    <pre>
+&lt;button (click)="navegarAOtro()"&gt;Ir a Otro Componente&lt;/button&gt;
+    </pre>
+    
+    <p>Al hacer clic en el botón, la aplicación navegará a la ruta <code>/otro</code>.</p>
+    
+    <h2>Próximos Pasos</h2>
+    <p>Con el enrutamiento configurado, el siguiente paso es entender cómo los componentes pueden comunicarse entre sí, lo que exploraremos en la próxima página.</p>
+
 </div>

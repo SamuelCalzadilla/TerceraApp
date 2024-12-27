@@ -1,3 +1,123 @@
 <div class="tutorial-page">
+    <h1>Directivas en Angular</h1>
     
+    <p>Las directivas en Angular son clases que permiten manipular el DOM de formas específicas. Son fundamentales para extender la funcionalidad del HTML y crear componentes más dinámicos y reutilizables.</p>
+    
+    <h2>Tipos de Directivas en Angular</h2>
+    <ul>
+        <li><strong>Directivas Estructurales:</strong> Alteran la estructura del DOM, añadiendo o eliminando elementos. Ejemplos: <code>*ngIf</code>, <code>*ngFor</code>.</li>
+        <li><strong>Directivas de Atributo:</strong> Cambian la apariencia o el comportamiento de un elemento existente. Ejemplos: <code>ngStyle</code>, <code>ngClass</code>.</li>
+        <li><strong>Directivas Personalizadas:</strong> Creadas por el desarrollador para añadir funcionalidades específicas.</li>
+    </ul>
+    
+    <h2>Directivas Estructurales</h2>
+    
+    <h3>1. *ngIf</h3>
+    <p>Controla la renderización de un elemento basado en una condición booleana.</p>
+    
+    <h4>Ejemplo de *ngIf</h4>
+    <p>En <code>hola-mundo.component.ts</code>, añade una propiedad booleana:</p>
+    
+    <pre>
+mostrarSeccion: boolean = true;
+    </pre>
+    
+    <p>En la plantilla <code>hola-mundo.component.html</code>, usa <code>*ngIf</code>:</p>
+    
+    <pre>
+        {{pre1}}
+    </pre>
+    
+    <p>Al hacer clic en el botón, la sección se alternará entre mostrar y ocultar.</p>
+    
+    <h3>2. *ngFor</h3>
+    <p>Itera sobre una colección y renderiza un elemento por cada ítem.</p>
+    
+    <h4>Ejemplo de *ngFor</h4>
+    <p>En <code>hola-mundo.component.ts</code>, define una lista de usuarios:</p>
+    
+    <pre>
+usuarios: string[] = ["Ana", "Luis", "Carlos", "Marta"];
+    </pre>
+    
+    <p>En la plantilla <code>hola-mundo.component.html</code>, usa <code>*ngFor</code> para listar los usuarios:</p>
+    
+    <pre>
+        {{pre2}}
+    </pre>
+    
+    <h2>Directivas de Atributo</h2>
+    
+    <h3>1. ngStyle</h3>
+    <p>Permite aplicar estilos en línea dinámicamente a un elemento.</p>
+    
+    <h4>Ejemplo de ngStyle</h4>
+    <p>En <code>hola-mundo.component.ts</code>, define un objeto de estilos:</p>
+    
+    <pre>
+        {{pre3}}
+    </pre>
+    
+    <p>En la plantilla <code>hola-mundo.component.html</code>, aplica los estilos:</p>
+    
+    <pre>
+&lt;p [ngStyle]="estilos"&gt;Este párrafo tiene estilos dinámicos.&lt;/p&gt;
+    </pre>
+    
+    <h3>2. ngClass</h3>
+    <p>Permite agregar o quitar clases CSS dinámicamente a un elemento.</p>
+    
+    <h4>Ejemplo de ngClass</h4>
+    <p>Define una clase CSS en <code>styles.css</code>:</p>
+    
+    <pre>
+        {{pre4}}
+    </pre>
+    
+    <p>En <code>hola-mundo.component.ts</code>, define una propiedad booleana:</p>
+    
+    <pre>
+esDestacado: boolean = true;
+    </pre>
+    
+    <p>En la plantilla <code>hola-mundo.component.html</code>, usa <code>ngClass</code>:</p>
+    
+    <pre>
+        {{pre5}}
+    </pre>
+    
+    <p>Al hacer clic en el botón, se alternará la clase <code>destacado</code>, cambiando el estilo del párrafo.</p>
+    
+    <h2>Directivas Personalizadas</h2>
+    <p>Angular permite crear directivas personalizadas para encapsular comportamientos específicos y reutilizables.</p>
+    
+    <h3>Creando una Directiva Personalizada</h3>
+    <p>Vamos a crear una directiva que cambia el color de fondo de un elemento al pasar el cursor sobre él.</p>
+    
+    <h4>Generando la Directiva</h4>
+    <pre>
+ng generate directive resaltar
+    </pre>
+    
+    <h4>Implementando la Directiva</h4>
+    <p>En <code>resaltar.directive.ts</code>, implementa la lógica para cambiar el color de fondo:</p>
+    
+    <pre>
+        {{pre6}}
+    </pre>
+    
+    <h4>Usando la Directiva en la Plantilla</h4>
+    <p>En <code>hola-mundo.component.html</code>, aplica la directiva a un elemento:</p>
+    
+    <pre>
+&lt;p [appResaltar]="'lightgreen'"&gt;Pasa el cursor sobre este párrafo para resaltar.&lt;/p&gt;
+    </pre>
+    
+    <p>Al pasar el cursor sobre el párrafo, el fondo cambiará a <code>lightgreen</code>, y volverá al estado original al retirar el cursor.</p>
+    
+    <h2>Práctica Recomendada</h2>
+    <p>Crear directivas personalizadas para encapsular comportamientos repetitivos o específicos ayuda a mantener el código limpio y facilita la reutilización de componentes en diferentes partes de la aplicación.</p>
+    
+    <h2>Próximos Pasos</h2>
+    <p>Ahora que hemos explorado las directivas, el siguiente tema será el uso de Pipes en Angular para transformar datos en las plantillas.</p>
 </div>

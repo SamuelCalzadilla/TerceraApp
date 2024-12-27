@@ -1,3 +1,130 @@
 <div class="tutorial-page">
+    <h1>Comunicación entre Componentes</h1>
     
+    <p>En una aplicación Angular, es común que diferentes componentes necesiten comunicarse entre sí. Angular proporciona varias formas de manejar esta comunicación de manera eficiente y mantenible.</p>
+    
+    <h2>Tipos de Comunicación</h2>
+    <ul>
+        <li><strong>Input y Output:</strong> Comunicación entre componentes padre e hijo.</li>
+        <li><strong>Servicios:</strong> Comunicación entre componentes no relacionados mediante servicios compartidos.</li>
+        <li><strong>Observables y Subjects:</strong> Manejo de eventos y datos reactivos entre componentes.</li>
+    </ul>
+    
+    <h2>Comunicación Padre-Hijo con {{input}} y {{output}}</h2>
+    
+    <h3>1. Usando {{input}}</h3>
+    <p>La decoración <code>{{input}}</code> permite que un componente padre pase datos a un componente hijo.</p>
+    
+    <h4>Ejemplo de {{input}}</h4>
+    <p>En <code>app.component.ts</code>, define una propiedad para pasar al hijo:</p>
+    
+    <pre>
+mensajePadre: string = "Mensaje desde el padre";
+    </pre>
+    
+    <p>En la plantilla <code>app.component.html</code>, pasa la propiedad al componente hijo:</p>
+    
+    <pre>
+        {{pre1}}
+    </pre>
+    
+    <p>En <code>hola-mundo.component.ts</code>, importa <code>Input</code> y define la propiedad receptora:</p>
+    
+    <pre>
+        {{pre2}}
+    </pre>
+    
+    <p>En <code>hola-mundo.component.html</code>, muestra el mensaje recibido:</p>
+    
+    <pre>
+        {{pre3}}
+    </pre>
+    
+    <p>Al ejecutar la aplicación, verás el mensaje enviado desde el componente padre.</p>
+    
+    <h3>2. Usando {{output}}</h3>
+    <p>La decoración <code>{{output}}</code> permite que un componente hijo emita eventos al componente padre.</p>
+    
+    <h4>Ejemplo de {{output}}</h4>
+    <p>En <code>hola-mundo.component.ts</code>, importa <code>Output</code> y <code>EventEmitter</code>, y define un evento:</p>
+    
+    <pre>
+        {{pre4}}
+    </pre>
+    
+    <p>En la plantilla <code>hola-mundo.component.html</code>, añade un botón para emitir el evento:</p>
+    
+    <pre>
+        {{pre5}}
+    </pre>
+    
+    <p>En el componente padre <code>app.component.html</code>, maneja el evento:</p>
+    
+    <pre>
+        {{pre6}}
+    </pre>
+    
+    <p>En <code>app.component.ts</code>, define el método para manejar el evento:</p>
+    
+    <pre>
+        {{pre7}}
+    </pre>
+    
+    <p>Ahora, al hacer clic en el botón del componente hijo, se disparará una alerta con el mensaje de notificación.</p>
+    
+    <h2>Comunicación entre Componentes No Relacionados</h2>
+    <p>Cuando los componentes no tienen una relación padre-hijo, la comunicación se puede manejar mediante servicios compartidos.</p>
+    
+    <h3>Usando un Servicio Compartido</h3>
+    <p>Ya hemos creado el servicio <code>DataService</code> que puede actuar como intermediario para compartir datos entre componentes.</p>
+    
+    <h4>Ejemplo de Comunicación con Servicios</h4>
+    <p>Supongamos que tienes dos componentes: <code>ComponenteA</code> y <code>ComponenteB</code>.</p>
+    
+    <p>En <code>data.service.ts</code>, añade un Subject para emitir eventos:</p>
+    
+    <pre>
+        {{pre8}}
+    </pre>
+    
+    <p>En <code>componente-a.component.ts</code>, inyecta el servicio y emite un mensaje:</p>
+    
+    <pre>
+        {{pre9}}
+    </pre>
+    
+    <p>En la plantilla <code>componente-a.component.html</code>, añade un botón para enviar el mensaje:</p>
+    
+    <pre>
+&lt;button (click)="enviarMensaje()"&gt;Enviar Mensaje a Componente B&lt;/button&gt;
+    </pre>
+    
+    <p>En <code>componente-b.component.ts</code>, suscríbete al mensaje del servicio:</p>
+    
+    <pre>
+        {{pre10}}
+    </pre>
+    
+    <p>En la plantilla <code>componente-b.component.html</code>, muestra el mensaje recibido:</p>
+    
+    <pre>
+        {{pre11}}
+    </pre>
+    
+    <p>Con esta configuración, al hacer clic en el botón del <code>ComponenteA</code>, el <code>ComponenteB</code> recibirá y mostrará el mensaje.</p>
+    
+    <h2>Uso de Observables y Subjects</h2>
+    <p>Los <strong>Observables</strong> y <strong>Subjects</strong> de RxJS son herramientas poderosas para manejar flujos de datos asíncronos y eventos en Angular.</p>
+    
+    <h3>¿Qué es un Observable?</h3>
+    <p>Un Observable es una colección de futuros valores o eventos. Puede ser observado por múltiples suscriptores, permitiendo la reacción a cada nuevo valor emitido.</p>
+    
+    <h3>¿Qué es un Subject?</h3>
+    <p>Un Subject es tanto un Observable como un Observer. Puede emitir nuevos valores y ser suscrito para recibir estos valores, facilitando la comunicación entre componentes.</p>
+    
+    <h2>Práctica Recomendada</h2>
+    <p>Utiliza servicios compartidos con Observables y Subjects para manejar la comunicación entre componentes no relacionados. Esto promueve una arquitectura más limpia y desacoplada.</p>
+    
+    <h2>Próximos Pasos</h2>
+    <p>Ahora que entendemos cómo los componentes pueden comunicarse entre sí, es momento de explorar cómo consumir APIs externas utilizando HttpClient en la próxima página.</p>
 </div>
