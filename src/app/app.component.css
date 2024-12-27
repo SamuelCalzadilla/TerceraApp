@@ -103,7 +103,7 @@ app-previous-page, app-home-button, app-next-page {
     font-size: 14px;
 }
 
-* Botones de acción */
+/* Botones de acción */
 .tutorial-page button {
     padding: 10px 20px;
     background-color: #2980b9;
