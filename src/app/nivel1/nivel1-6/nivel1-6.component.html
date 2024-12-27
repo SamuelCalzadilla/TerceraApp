@@ -1,1 +1,130 @@
-<p>nivel1-6 works!</p>
+<div class="tutorial-page">
+    <h1>Binding de Datos en Angular</h1>
+    
+    <p>El binding de datos es una característica fundamental en Angular que permite la sincronización automática entre el modelo de datos y la vista. Angular proporciona varios tipos de binding que facilitan la interacción entre el código y la interfaz de usuario.</p>
+    
+    <h2>Tipos de Binding en Angular</h2>
+    
+    <h3>1. Interpolación</h3>
+    <p>La interpolación permite insertar datos del componente en la plantilla utilizando la sintaxis <code>{{code1_nivel_6}}</code>.</p>
+    
+    <h4>Ejemplo de Interpolación</h4>
+    <p>En <code>hola-mundo.component.ts</code>, tenemos la propiedad <code>mensaje</code>:</p>
+    
+    <pre>
+    mensaje: string = "¡Bienvenido al binding de datos!";
+    </pre>
+    
+    <p>En la plantilla <code>hola-mundo.component.html</code>, usamos la interpolación para mostrar el mensaje:</p>
+    
+    <pre>
+    {{pre1_nivel1_6}}
+    </pre>
+    
+    <p>Esto renderizará: <em>¡Bienvenido al binding de datos!</em></p>
+    
+    <h3>2. Property Binding</h3>
+    <p>Permite enlazar propiedades de elementos HTML con propiedades del componente. Utiliza la sintaxis <code>[propiedad]="valor"</code>.</p>
+    
+    <h4>Ejemplo de Property Binding</h4>
+    <p>Supongamos que queremos enlazar el atributo <code>src</code> de una imagen con una propiedad del componente:</p>
+    
+    <pre>
+    srcImagen: string = "https://ejemplo.com/imagen.jpg";
+    </pre>
+    
+    <p>En la plantilla:</p>
+    
+    <pre>
+        {{pre2_nivel1_6}}
+    </pre>
+    
+    <h3>3. Event Binding</h3>
+    <p>Permite manejar eventos del DOM como clics, cambios, etc., mediante la sintaxis <code>(evento)="método()"</code>.</p>
+    
+    <h4>Ejemplo de Event Binding</h4>
+    <p>En el componente:</p>
+    
+    <pre>
+    {{pre3_nivel1_6}}
+    </pre>
+    
+    <p>En la plantilla:</p>
+    
+    <pre>
+        {{pre4_nivel1_6}}
+    </pre>
+    
+    <p>Al hacer clic en el botón, el método <code>cambiarMensaje()</code> se ejecuta, actualizando la propiedad <code>mensaje</code>.</p>
+    
+    <h3>4. Two-Way Binding</h3>
+    <p>Permite la sincronización bidireccional entre el modelo y la vista utilizando la sintaxis <code>[(ngModel)]="propiedad"</code>. Requiere importar el módulo <strong>FormsModule</strong>.</p>
+    
+    <h4>Ejemplo de Two-Way Binding</h4>
+    <p>En <code>app.module.ts</code>, importa <code>FormsModule</code>:</p>
+    
+    <pre>
+    {{pre5_nivel1_6}}
+    </pre>
+    
+    <p>En <code>hola-mundo.component.ts</code>, agrega una propiedad:</p>
+    
+    <pre>
+    nombre: string = "Angular";
+    </pre>
+    
+    <p>En la plantilla <code>hola-mundo.component.html</code>, añade un input con two-way binding:</p>
+    
+    <pre>
+    {{pre6_nivel1_6}}
+    </pre>
+    
+    <p>Ahora, cualquier cambio en el input actualizará automáticamente la propiedad <code>nombre</code> y viceversa.</p>
+    
+    <h2>Directivas de Angular para Binding</h2>
+    
+    <h3>*ngIf</h3>
+    <p>La directiva <code>*ngIf</code> permite mostrar u ocultar elementos en la plantilla basándose en una condición.</p>
+    
+    <h4>Ejemplo de *ngIf</h4>
+    <p>En el componente, agrega una propiedad booleana:</p>
+    
+    <pre>
+    mostrarMensaje: boolean = true;
+    </pre>
+    
+    <p>En la plantilla:</p>
+    
+    <pre>
+    &lt;div *ngIf="mostrarMensaje"&gt;
+    &lt;p&gt;Este mensaje se muestra si <code>mostrarMensaje</code> es <code>true</code>.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button (click)="mostrarMensaje = !mostrarMensaje"&gt;Toggle Mensaje&lt;/button&gt;
+    </pre>
+    
+    <p>Al hacer clic en el botón, el mensaje se alternará entre mostrar y ocultar.</p>
+    
+    <h3>*ngFor</h3>
+    <p>La directiva <code>*ngFor</code> permite iterar sobre una colección y renderizar elementos dinámicamente.</p>
+    
+    <h4>Ejemplo de *ngFor</h4>
+    <p>En el componente, agrega una lista de elementos:</p>
+    
+    <pre>
+    items: string[] = ["Elemento 1", "Elemento 2", "Elemento 3"];
+    </pre>
+    
+    <p>En la plantilla:</p>
+    
+    <pre>
+        {{pre7_nivel1_6}}
+    </pre>
+    
+    <p>Esto generará una lista desordenada con los elementos especificados.</p>
+    
+    <h2>Práctica Recomendada</h2>
+    <p>Experimenta combinando diferentes tipos de binding para entender mejor cómo interactúan los componentes con la vista. Por ejemplo, crea formularios interactivos que respondan a las entradas del usuario en tiempo real.</p>
+    
+    <h2>Próximos Pasos</h2>
+    <p>Con una comprensión sólida del binding de datos, estamos listos para explorar los servicios y la inyección de dependencias en Angular en la siguiente página.</p>    
+</div>

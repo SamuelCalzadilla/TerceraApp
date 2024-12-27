@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: false,
   
   templateUrl: './intro-nivel2.component.html',
-  styleUrl: './intro-nivel2.component.css'
+  styleUrls: ['./intro-nivel2.component.css', '../../app.component.css']
 })
 export class IntroNivel2Component {
 

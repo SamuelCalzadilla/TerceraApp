@@ -1,1 +1,70 @@
-<p>nivel2-1 works!</p>
+<div class="tutorial-page">
+    <h1>Servicios y Dependencias en Angular</h1>
+    
+    <p>Los servicios en Angular son clases que proporcionan funcionalidades específicas que pueden ser compartidas entre múltiples componentes. Utilizan el patrón de diseño de <strong>Inyección de Dependencias</strong> para gestionar las dependencias y facilitar la reutilización del código.</p>
+    
+    <h2>¿Qué es un Servicio?</h2>
+    <p>Un servicio es una clase con una responsabilidad bien definida, como la gestión de datos, la comunicación con APIs, la autenticación de usuarios, etc. Los servicios ayudan a mantener los componentes ligeros y enfocados en la presentación y la lógica de la interfaz de usuario.</p>
+    
+    <h2>Creando un Servicio</h2>
+    <p>Para generar un nuevo servicio llamado <code>data</code>, utiliza Angular CLI:</p>
+    
+    <pre>
+ng generate service data
+    </pre>
+    
+    <p>Este comando creará dos archivos:</p>
+    <ul>
+        <li><strong>data.service.ts:</strong> Contiene la lógica del servicio.</li>
+        <li><strong>data.service.spec.ts:</strong> Archivo de pruebas unitarias.</li>
+    </ul>
+    
+    <h2>Implementando el Servicio</h2>
+    <p>En <code>data.service.ts</code>, vamos a implementar un método para obtener datos:</p>
+    
+    <pre>
+        {{pre1_nivel2_1}}
+    </pre>
+    
+    <p>El decorador <code>{{code1_nivel2_1}}</code> indica que esta clase puede tener dependencias inyectadas en ella. La propiedad <code>providedIn: 'root'</code> asegura que el servicio se registre a nivel de aplicación, haciéndolo disponible para todos los componentes.</p>
+    
+    <h2>Inyectando el Servicio en un Componente</h2>
+    <p>Para utilizar el servicio <code>DataService</code> en un componente, debemos inyectarlo en el constructor del componente.</p>
+    
+    <h3>Modificar <code>hola-mundo.component.ts</code></h3>
+    
+    <pre>
+        {{pre2_nivel2_1}}
+    </pre>
+    
+    <p>Aquí, el servicio <code>DataService</code> se inyecta en el componente mediante el constructor. Luego, en el método <code>ngOnInit</code>, llamamos a <code>obtenerDatos()</code> para obtener los datos y asignarlos a la propiedad <code>datos</code>.</p>
+    
+    <h3>Actualizar la Plantilla <code>hola-mundo.component.html</code></h3>
+    
+    <pre>
+        {{pre3_nivel2_1}}
+    </pre>
+    
+    <p>Esto renderizará una lista de datos obtenidos desde el servicio.</p>
+    
+    <h2>Inyección de Dependencias en Angular</h2>
+    <p>La inyección de dependencias es un patrón de diseño que permite que las clases reciban sus dependencias de fuentes externas en lugar de crearlas internamente. En Angular, esto se gestiona mediante el sistema de proveedores y el inyector.</p>
+    
+    <h3>Proveedores</h3>
+    <p>Los proveedores son responsables de crear instancias de servicios. Al especificar <code>providedIn: 'root'</code>, Angular crea una única instancia del servicio que se comparte en toda la aplicación.</p>
+    
+    <h3>Inyectores</h3>
+    <p>El inyector es el mecanismo que crea y entrega las instancias de los servicios a los componentes o a otros servicios que los requieran.</p>
+    
+    <h2>Beneficios de Usar Servicios</h2>
+    <ul>
+        <li><strong>Reutilización de Código:</strong> Facilita la reutilización de lógica común entre múltiples componentes.</li>
+        <li><strong>Mantenimiento:</strong> Centraliza la lógica de negocio, haciendo que sea más fácil de mantener y actualizar.</li>
+        <li><strong>Pruebas Unitarias:</strong> Facilita la creación de pruebas unitarias al separar la lógica de negocio de la lógica de presentación.</li>
+        <li><strong>Modularidad:</strong> Promueve una arquitectura más modular y organizada.</li>
+    </ul>
+    
+    <h2>Próximos Pasos</h2>
+    <p>Con los servicios y la inyección de dependencias entendidos, el siguiente paso es explorar cómo gestionar la navegación y las rutas en Angular en la próxima página.</p>
+
+</div>

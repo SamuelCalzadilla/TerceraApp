@@ -1,1 +1,86 @@
-<p>nivel1-5 works!</p>
+<div class="tutorial-page">
+    <h1>Primer Componente en Angular</h1>
+    
+    <p>Los componentes son la piedra angular de las aplicaciones Angular. Cada componente controla una parte específica de la interfaz de usuario y su comportamiento asociado.</p>
+    
+    <h2>Generando un Nuevo Componente</h2>
+    <p>Angular CLI facilita la creación de nuevos componentes mediante comandos simples. Para generar un nuevo componente llamado <code>hola-mundo</code>, ejecuta el siguiente comando en la terminal:</p>
+    
+    <pre>
+    ng generate component hola-mundo
+    </pre>
+    
+    <p>Este comando creará una carpeta llamada <code>hola-mundo</code> dentro de <code>src/app/</code> con los siguientes archivos:</p>
+    
+    <ul>
+        <li><strong>hola-mundo.component.ts:</strong> Contiene la lógica del componente.</li>
+        <li><strong>hola-mundo.component.html:</strong> Plantilla HTML del componente.</li>
+        <li><strong>hola-mundo.component.css:</strong> Estilos específicos para el componente.</li>
+        <li><strong>hola-mundo.component.spec.ts:</strong> Archivo de pruebas unitarias.</li>
+    </ul>
+    
+    <h2>Estructura de un Componente</h2>
+    <p>Un componente en Angular está compuesto por:</p>
+    <ul>
+        <li><strong>{{strong1_nivel1_5}}</strong> Define metadatos para el componente, como su selector, plantilla y estilos.</li>
+        <li><strong>Clase del Componente:</strong> Contiene la lógica y los datos que se utilizan en la plantilla.</li>
+    </ul>
+    
+    <h3>Ejemplo de <code>hola-mundo.component.ts</code></h3>
+    
+    <pre>
+    {{pre1_nivel1_5}}
+    </pre>
+    
+    <h2>Modificando la Plantilla del Componente</h2>
+    <p>Vamos a personalizar la plantilla del componente para mostrar un mensaje de bienvenida.</p>
+    
+    <h3>Archivo: <code>hola-mundo.component.html</code></h3>
+    
+    <pre>
+    &lt;h2&gt;¡Hola Mundo!&lt;/h2&gt;
+    &lt;p&gt;Este es mi primer componente en Angular.&lt;/p&gt;
+    </pre>
+    
+    <h2>Incluyendo el Componente en la Aplicación</h2>
+    <p>Para que el nuevo componente se muestre en la aplicación, debemos incluir su selector en la plantilla del componente raíz.</p>
+    
+    <h3>Archivo: <code>app.component.html</code></h3>
+    
+    <pre>
+    &lt;app-hola-mundo&gt;&lt;/app-hola-mundo&gt;
+    </pre>
+    
+    <p>Después de guardar los cambios, verifica que tu servidor de desarrollo esté corriendo (<code>ng serve</code>) y refresca la página en el navegador. Deberías ver el mensaje de bienvenida de tu nuevo componente.</p>
+    
+    <h2>Personalizando el Componente</h2>
+    <p>Ahora, vamos a agregar más funcionalidad y estilo al componente <code>hola-mundo</code>.</p>
+    
+    <h3>Agregando Propiedades y Métodos</h3>
+    <p>En <code>hola-mundo.component.ts</code>, agrega una propiedad llamada <code>mensaje</code> y un método para actualizarla:</p>
+    
+    <pre>
+    {{pre2_nivel1_5}}
+    </pre>
+    
+    <h3>Actualizando la Plantilla para Mostrar la Propiedad</h3>
+    <p>En <code>hola-mundo.component.html</code>, utiliza la interpolación para mostrar la propiedad <code>mensaje</code> y agrega un botón para actualizarlo:</p>
+    
+    <pre>
+    {{pre3_nivel1_5}}
+    </pre>
+    
+    <p>Guarda los archivos y observa cómo el mensaje se actualiza al hacer clic en el botón.</p>
+    
+    <h2>Estilizando el Componente</h2>
+    <p>Para mejorar la apariencia del componente, agrega algunos estilos en <code>hola-mundo.component.css</code>:</p>
+    
+    <pre>
+    {{pre4_nivel1_5}}
+    </pre>
+    
+    <p>Estos estilos cambiarán el color del título y agregarán un margen al botón.</p>
+    
+    <h2>Próximos Pasos</h2>
+    <p>Con tu primer componente creado y personalizado, el siguiente paso es entender cómo Angular maneja el binding de datos, que profundizaremos en la próxima página.</p>    
+</div>

@@ -1,1 +1,60 @@
-<p>nivel1-3 works!</p>
+<div class="tutorial-page">
+    <h1>Creación de un Proyecto Angular</h1>
+    
+    <h2>Iniciando un Nuevo Proyecto</h2>
+    <p>Con Angular CLI instalado, crear un nuevo proyecto Angular es un proceso sencillo. Sigue estos pasos para iniciar tu primer proyecto:</p>
+    
+    <h3>Comando para Crear un Nuevo Proyecto</h3>
+    <pre>
+    ng new mi-primera-app
+    </pre>
+    
+    <p>Este comando generará una nueva carpeta llamada <code>mi-primera-app</code> con toda la estructura y archivos necesarios para empezar.</p>
+    
+    <h3>Configuración Inicial</h3>
+    <p>Durante la ejecución del comando, Angular CLI te pedirá que respondas algunas preguntas para configurar tu proyecto:</p>
+    <ul>
+        <li><strong>¿Agregar Angular Routing?</strong> Escribe <code>y</code> si planeas utilizar rutas en tu aplicación.</li>
+        <li><strong>Tipo de Hoja de Estilos:</strong> Selecciona el preprocesador CSS que prefieras (CSS, SCSS, Sass, Less, Stylus). Para este tutorial, selecciona <strong>CSS</strong>.</li>
+    </ul>
+    
+    <h3>Explorando la Estructura del Proyecto</h3>
+    <p>Después de crear el proyecto, navega al directorio del mismo:</p>
+    
+    <pre>
+    cd mi-primera-app
+    </pre>
+    
+    <p>Dentro de este directorio, encontrarás la siguiente estructura:</p>
+    
+    <ul>
+        <li><strong>e2e/</strong>: Contiene pruebas end-to-end.</li>
+        <li><strong>node_modules/</strong>: Carpeta de dependencias instaladas.</li>
+        <li><strong>src/</strong>: Código fuente de la aplicación.</li>
+        <li><strong>angular.json</strong>: Configuración del proyecto Angular.</li>
+        <li><strong>package.json</strong>: Información del proyecto y dependencias.</li>
+        <li><strong>tsconfig.json</strong>: Configuración de TypeScript.</li>
+    </ul>
+    
+    <h3>Ejecutando la Aplicación</h3>
+    <p>Para ver tu aplicación en funcionamiento, ejecuta el siguiente comando:</p>
+    
+    <pre>
+    ng serve
+    </pre>
+    
+    <p>Este comando compila la aplicación y la sirve en un servidor de desarrollo. Por defecto, estará disponible en <a href="http://localhost:4200" target="_blank">http://localhost:4200</a>.</p>
+    
+    <h3>Accediendo a la Aplicación en el Navegador</h3>
+    <p>Abre tu navegador web favorito y visita <a href="http://localhost:4200" target="_blank">http://localhost:4200</a>. Deberías ver una página de bienvenida de Angular indicando que tu aplicación está corriendo correctamente.</p>
+    
+    <h3>Detalles del Comando <code>ng serve</code></h3>
+    <ul>
+        <li><strong>--open (o -o):</strong> Abre automáticamente la aplicación en el navegador después de compilar.</li>
+        <li><strong>--port:</strong> Especifica un puerto diferente al 4200.</li>
+        <li><strong>--watch:</strong> Vuelve a compilar la aplicación cuando se detectan cambios en los archivos.</li>
+    </ul>
+    
+    <h2>Próximos Pasos</h2>
+    <p>Ahora que tu proyecto Angular está creado y corriendo, es hora de explorar la estructura del proyecto en detalle en la siguiente página.</p>    
+</div>
