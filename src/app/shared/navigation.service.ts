@@ -26,8 +26,7 @@ export class NavigationService {
     '/nivel3/3',
     '/nivel3/4',
     '/nivel3/5',
-    '/nivel3/6',
-    '/nivel3/final'
+    '/nivel3/6'
   ];
 
   getNextPage(currentUrl: string): string | null {

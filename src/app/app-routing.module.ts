@@ -2,12 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component'; // Importa el componente de inicio
-import { PaginaIntro1Component } from './intro/pagina-intro-1/pagina-intro-1.component';
-import { PaginaIntro2Component } from './intro/pagina-intro-2/pagina-intro-2.component';
-import { PaginaTutorial1Component } from './tutorial/pagina-tutorial-1/pagina-tutorial-1.component';
-import { PaginaTutorial2Component } from './tutorial/pagina-tutorial-2/pagina-tutorial-2.component';
-import { PaginaEjemplos1Component } from './ejemplos/pagina-ejemplos-1/pagina-ejemplos-1.component';
-import { PaginaEjemplos2Component } from './ejemplos/pagina-ejemplos-2/pagina-ejemplos-2.component';
 
 
 import { IntroNivel1Component } from './nivel1/intro-nivel1/intro-nivel1.component';
@@ -34,11 +28,13 @@ import { Nivel33Component } from './nivel3/nivel3-3/nivel3-3.component';
 import { Nivel34Component } from './nivel3/nivel3-4/nivel3-4.component';
 import { Nivel35Component } from './nivel3/nivel3-5/nivel3-5.component';
 import { Nivel36Component } from './nivel3/nivel3-6/nivel3-6.component';
-import { Nivel3FinalComponent } from './nivel3/nivel3-final/nivel3-final.component';
 
 
 
 const routes: Routes = [
+    // Ruta para la página de inicio
+    { path: '', component: HomeComponent },
+
   // Rutas para el módulo "Nivel1"
   { path: 'nivel1/intro', component: IntroNivel1Component },
   { path: 'nivel1/1', component: Nivel11Component },
@@ -66,25 +62,8 @@ const routes: Routes = [
   { path: 'nivel3/4', component: Nivel34Component },
   { path: 'nivel3/5', component: Nivel35Component },
   { path: 'nivel3/6', component: Nivel36Component },
-  { path: 'nivel3/final', component: Nivel3FinalComponent },
 
 
-
-
-    // Ruta para la página de inicio
-    { path: '', component: HomeComponent },
-
-    // Rutas para el módulo "Intro"
-    { path: 'intro/1', component: PaginaIntro1Component },
-    { path: 'intro/2', component: PaginaIntro2Component },
-  
-    // Rutas para el módulo "Tutorial"
-    { path: 'tutorial/1', component: PaginaTutorial1Component },
-    { path: 'tutorial/2', component: PaginaTutorial2Component },
-  
-    // Rutas para el módulo "Ejemplos"
-    { path: 'ejemplos/1', component: PaginaEjemplos1Component },
-    { path: 'ejemplos/2', component: PaginaEjemplos2Component },
 ];
 
 @NgModule({
