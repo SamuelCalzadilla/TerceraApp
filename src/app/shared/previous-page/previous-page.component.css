@@ -11,3 +11,15 @@ button, a {
 button:hover, a:hover {
     background-color: #1f6391;
 }
+
+/* Botón de retroceder cuando no hay página anterior */
+button.disabled, a.disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+/* Botón de avanzar cuando no hay página siguiente */
+button.disabled-next, a.disabled-next {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}

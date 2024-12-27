@@ -1,3 +1,7 @@
-<button (click)="goToPreviousPage()" [disabled]="!previousPage">
-    Anterior
+<button
+  [class.disabled]="isFirstPage"
+  (click)="goToPreviousPage()"
+  [attr.disabled]="isFirstPage ? true : null"
+>
+  Retroceder
 </button>

@@ -12,6 +12,8 @@ import { NavigationService } from '../navigation.service';
 
 export class PreviousPageComponent {
   previousPage: string | null = null;
+  isFirstPage: boolean = false; // Para verificar si estamos en la primera página
+
 
   constructor(private router: Router, private navService: NavigationService) {
     this.router.events.subscribe(() => {
@@ -23,6 +25,8 @@ export class PreviousPageComponent {
   private updatePreviousPage(): void {
     const currentUrl = this.router.url;
     this.previousPage = this.navService.getPreviousPage(currentUrl);
+    // Verificamos si estamos en la primera página
+    this.isFirstPage = !this.previousPage; 
   }
 
   goToPreviousPage(): void {

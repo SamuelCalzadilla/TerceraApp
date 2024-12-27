@@ -1,3 +1,7 @@
-<button (click)="goToNextPage()" [disabled]="!nextPage">
-    Siguiente
+<button
+  [class.disabled-next]="isLastPage"
+  (click)="goToNextPage()"
+  [attr.disabled]="isLastPage ? true : null"
+>
+  Avanzar
 </button>
