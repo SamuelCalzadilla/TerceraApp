@@ -18,6 +18,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
     margin-right: 70px;
+    flex-direction: column; /* Permitir que los elementos se organicen de arriba hacia abajo */
   }
   
   /* Contenido específico de home */
@@ -27,18 +28,42 @@
     color: #333;
   } 
 
-  .tutorial-page h1 {
-    color: red; /* Aplica el color rojo a los h1 de los componentes */
-  }
+
+/* Contenedor de los botones (retroceder, home, avanzar) */
+.shared-components-wrapper {
+    display: flex;
+    justify-content: space-between; /* Distribuir los botones de manera uniforme */
+    align-items: center;
+    margin-bottom: 20px; /* Espaciado entre los botones y el contenido principal */
+}
+
+
+/* Estilos generales de los botones para mejorar la apariencia */
+app-previous-page, app-home-button, app-next-page {
+    display: inline-block; /* Asegurarse de que los componentes se comporten como elementos de bloque en línea */
+    margin: 0 10px; /* Espaciado entre los botones */
+    margin-top: 30px;
+}
+
+
+button, a {
+    padding: 10px 20px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none; /* Eliminar subrayado de los enlaces */
+    cursor: pointer;
+}
+
+button:hover, a:hover {
+    background-color: #1f6391;
+}
 
 
 
 
-
-
-
-
-  .tutorial-page h1, h2, h3 {
+.tutorial-page h1, h2, h3 {
     color: #2c3e50;
 }
 

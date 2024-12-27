@@ -7,7 +7,7 @@ import { NavigationService } from '../navigation.service';
   standalone: false,
   
   templateUrl: './previous-page.component.html',
-  styleUrl: './previous-page.component.css'
+  styleUrls: ['./previous-page.component.css', '../../app.component.css']
 })
 
 export class PreviousPageComponent {
